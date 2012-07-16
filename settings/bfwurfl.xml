@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for params, required by default is true -->
+<!-- type can be string, ... -->
+<operators>
+	<operator name="bfwurfl_get"></operator>
+</operators>
