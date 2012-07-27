@@ -1,17 +1,19 @@
 <?php
-require_once(dirname(__FILE__)."/"."../../customExtension.php");
-$dirParts = explode(DIRECTORY_SEPARATOR, dirname(__FILE__));
-$className = $dirParts[sizeof($dirParts)-2];
-$operators = array_keys(customExtension::getExtensionDetails($className));
-$functions = 
+/*
+ * bfwurfl is released under the GNU AFFERO GENERAL PUBLIC LICENSE version 3.
+ * http://www.gnu.org/licenses/agpl-3.0.html
+ *
+ * WURFL is a registered trademark of ScientiaMobile, Inc.
+ * eZ Publish is a registered trademark of eZ Systems AS
+ *
+ * Copyright 2012 Beaconfire <http://www.beaconfire.com/>
+ */
+
 $eZTemplateOperatorArray = array();
-$eZTemplateOperatorArray[] = array( 
-	'class' => $className,
-	'script' => "extension/$className/classes/$className.php",
- 	'operator_names' => $operators,
+$eZTemplateOperatorArray[] = array(
+	'script' => 'extension/bfwurfl/classes/templatewurfloperator.php',
+	'class' => 'TemplateWURFLOperator',
+	'operator_names' => array( 'bfwurfl_get', 'wurfl' )
 );
-// For example defintion, see :
-// http://pubsvn.ez.no/doxygen/4.0/html/lib_2eztemplate_2classes_2eztemplateautoload_8php-source.html 
-// TODO: add this capability to the customExtension.php, reading it from XML
-//$eZTemplateFunctionArray = array();
+
 ?>
