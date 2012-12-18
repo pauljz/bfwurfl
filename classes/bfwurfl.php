@@ -74,7 +74,10 @@ class bfwurfl {
 		try {
 
 			$requestingDevice = $this->requestingDevice;
-
+			
+			//check for object, exit, otherwise will error
+			if(!$requestingDevice) { return $deviceData;}
+			
 			$isWireless = $requestingDevice->getCapability('is_wireless_device') == 'true';
 			$isTablet = $requestingDevice->getCapability('is_tablet') == 'true';
 			$deviceData['is_mobile_device'] = $isWireless || $isTablet;
