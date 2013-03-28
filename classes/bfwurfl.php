@@ -54,6 +54,7 @@ class bfwurfl {
 		
 			$this->requestingDevice = $this->wurflManager->getDeviceForHttpRequest($_SERVER);
 		} catch ( Exception $e ) {
+			eZDebug::writeError("WURFL is broken\n" . $e);
 			$this->isBroken = true;
 		}
 
@@ -98,6 +99,7 @@ class bfwurfl {
 			}
 
 		} catch ( Exception $e ) {
+			eZDebug::writeError("WURFL is broken\n" . $e);
 			$this->isBroken = true;
 		}
 
